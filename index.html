@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+
+  <title>Frontend Mentor | Calculator app</title>
+  <link rel="stylesheet" href="styles.css">
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+
+</head>
+
+<body>
+  <div class="calculator">
+    <table class="calculator-display">
+
+      <tr>
+        <td colspan="4"><input calculator_display type="text" class="display-box" id="result"></td>
+      </tr>
+
+    </table>
+    <table class="calculator-keys">
+
+      <tr>
+        <td><button>7</button></td>
+        <td><button>8</button></td>
+        <td><button>9</button></td>
+        <td><button class="del" data-action="clear" value="DEL">DEL</button></td>
+      </tr>
+      <tr>
+        <td><button>4</button></td>
+        <td><button>5</button></td>
+        <td><button>6</button></td>
+        <td><button class="key--operator" data-action="add">+</button></td>
+      </tr>
+      <tr>
+        <td><button>1</button></td>
+        <td><button>2</button></td>
+        <td><button>3</button></td>
+        <td><button class="key--operator" data-action="subtraction">-</button></td>
+      </tr>
+      <tr>
+        <td><button data-action="decimal">.</button></td>
+        <td><button>0</button></td>
+        <td><button class="key--operator" data-action="divide">/</button></td>
+        <td><button class="key--operator" data-action="multiply">*</button></td>
+      </tr>
+      <tr>
+        <td colspan="2"><button class="reset" type="reset">RESET</button></td>
+        <td colspan="2"><button class="equal" data-action="calculate">=</button></td>
+      </tr>
+
+    </table>
+  </div>
+
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+    Coded by <a href="#">Vk</a>.
+  </div>
+
+  <script src="index.js" charset="UTF-8"></script>
+</body>
+
+</html>

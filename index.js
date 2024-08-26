@@ -1,37 +1,42 @@
-let string = "";
-let buttons = document.querySelectorAll("button");
-Array.from(buttons).forEach((button) => {
-    button.addEventListener("click", (e) => {
-        if (e.target.innerHTML == "=") {
-            string = eval(string);
-            document.querySelector("input").value = string;
-        }
 
-        else if (e.target.innerHTML == "RESET") {
-            string = "";
-            document.querySelector("input").value = string;
-        }
-        else if (e.target.innerHTML == "DEL") {
-            string = (string).slice(0, -1);
-            document.querySelector("input").value = string;
-        }
-        else {
-            console.log(e.target)
-            string = string + e.target.innerHTML;
-            document.querySelector("input").value = string;
-        }
-    });
+const resultDisplay = document.getElementById('result');
+const buttons = document.querySelectorAll('button');
+const liveResultDisplay = document.getElementById('liveResult');
+
+buttons.forEach(button => {
+  button.addEventListener('click', () => {
+    resultDisplay.value = resultDisplay.value.replace('0', '');
+    const value = button.value;
+
+    if (value === 'DEL') {
+      resultDisplay.value = resultDisplay.value.slice(0, -1);
+    } else if (value === '=') {
+      try {
+        resultDisplay.value = eval(resultDisplay.value.replace('x', '*').replace('÷', '/'));
+      } catch {
+        resultDisplay.value =  liveResultDisplay.value;
+      }
+    } else if (value === 'RESET') {
+      resultDisplay.value = '0';
+      liveResultDisplay.value = '0';
+    } else {
+      resultDisplay.value += value;
+    }
+    updateResult();
+  });
 });
 
-const keyboardInput = document.getElementById("result");
-document.addEventListener("keydown", (event) => {
-    console.log(event);
-    if (event.key == "0-9") { keyboardInput.value += event.key }
-    else if (event.key == "Backspace") { keyboardInput.value = keyboardInput.value.slice(0, -1); }
-    else if (event.key == "+") { keyboardInput.value += event.key }
-    else if (event.key == "-") { keyboardInput.value += event.key }
-    else if (event.key == "*") { keyboardInput.value += event.key }
-    else if (event.key == "/") { keyboardInput.value += event.key }
-    else if (event.key == "Enter") { keyboardInput.value = eval(keyboardInput.value); }
-    else { "Error" };
-});
+function updateResult() {
+ if (/\d$/.test(resultDisplay.value)) {
+  try  {
+    liveResultDisplay.value = eval(resultDisplay.value.replace('x', '*').replace('÷', '/')) || '0';
+    }
+ catch {
+  liveResultDisplay.value = 'ERROR';
+}
+} else if (value = 'DEL') {
+  liveResultDisplay.value = eval(resultDisplay.value.slice(0, -1).replace('x', '*').replace('÷', '/')) || '0';
+}
+   
+  
+};

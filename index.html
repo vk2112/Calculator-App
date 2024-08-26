@@ -4,13 +4,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- displays site properly based on user's device -->
 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
 
   <title>Frontend Mentor | Calculator app</title>
   <link rel="stylesheet" href="styles.css">
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
 
 </head>
 
@@ -19,39 +17,39 @@
     <table class="calculator-display">
 
       <tr>
-        <td colspan="4"><input calculator_display type="text" class="display-box" id="result"></td>
+        <td colspan="4"><input calculator_display type="text" class="display-box" id="result" value="0"><input calculator_display type="text" class="display-box" id="liveResult" value="0"></td>
       </tr>
 
     </table>
     <table class="calculator-keys">
 
       <tr>
-        <td><button>7</button></td>
-        <td><button>8</button></td>
-        <td><button>9</button></td>
-        <td><button class="del" data-action="clear" value="DEL">DEL</button></td>
+        <td><button value="7" id="btn">7</button></td>
+        <td><button value="8" id="btn">8</button></td>
+        <td><button value="9" id="btn">9</button></td>
+        <td><button class="del" id="clear" value="DEL">DEL</button></td>
       </tr>
       <tr>
-        <td><button>4</button></td>
-        <td><button>5</button></td>
-        <td><button>6</button></td>
-        <td><button class="key--operator" data-action="add">+</button></td>
+        <td><button value="4" id="btn">4</button></td>
+        <td><button value="5" id="btn">5</button></td>
+        <td><button value="6" id="btn">6</button></td>
+        <td><button class="key--operator" id="plus" value="+">+</button></td>
       </tr>
       <tr>
-        <td><button>1</button></td>
-        <td><button>2</button></td>
-        <td><button>3</button></td>
-        <td><button class="key--operator" data-action="subtraction">-</button></td>
+        <td><button value="1" id="btn">1</button></td>
+        <td><button value="2" id="btn">2</button></td>
+        <td><button value="3" id="btn">3</button></td>
+        <td><button class="key--operator" id="minus" value="-">-</button></td>
       </tr>
       <tr>
         <td><button data-action="decimal">.</button></td>
-        <td><button>0</button></td>
-        <td><button class="key--operator" data-action="divide">/</button></td>
-        <td><button class="key--operator" data-action="multiply">*</button></td>
+        <td><button value="0" id="btn">0</button></td>
+        <td><button class="key--operator" id="divide" value="/">&#247</button></td>
+        <td><button class="key--operator" id="multiply" value="*">x</button></td>
       </tr>
       <tr>
-        <td colspan="2"><button class="reset" type="reset">RESET</button></td>
-        <td colspan="2"><button class="equal" data-action="calculate">=</button></td>
+        <td colspan="2"><button class="reset" type="reset" id="reset" value="RESET">RESET</button></td>
+        <td colspan="2"><button class="equal" id="calculate" value="=">=</button></td>
       </tr>
 
     </table>
